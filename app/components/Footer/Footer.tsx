@@ -98,7 +98,7 @@ const footer = () => {
             {/* All Rights Reserved */}
 
             <div className='py-10 md:flex items-center justify-between border-t border-t-gray-blue'>
-                <h4 className='text-dark-red opacity-75 text-sm text-center md:text-start font-normal'>@2023.A'numerique.All rights reserved</h4>
+                <h4 className='text-dark-red opacity-75 text-sm text-center md:text-start font-normal'>@2023.Anumerique.All rights reserved</h4>
                 <div className="flex gap-5 mt-5 md:mt-0 justify-center md:justify-start">
                     <h4 className='text-dark-red opacity-75 text-sm font-normal'><Link href="/" target="_blank">Privacy policy</Link></h4>
                     <div className="h-5 bg-dark-red opacity-25 w-0.5"></div>
