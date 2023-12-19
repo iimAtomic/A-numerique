@@ -62,12 +62,13 @@ const Navbar = () => {
                                     className="block h-12 w-40 lg:hidden"
                                     src={'/assets/logo/logoAnum2.png'}
                                     alt="dsign-logo"
+                                    style={{ width: '50px' }}
                                 />
                                 <img
                                     className="hidden h-15 w-26 lg:block"
                                     src={'/assets/logo/logoAnum2.png'}
                                     alt="dsign-logo"
-                                    style={{ width: '100px' }}
+                                    style={{ width: '80px' }}
                                 />
                             </div>
 

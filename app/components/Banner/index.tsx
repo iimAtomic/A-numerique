@@ -13,7 +13,7 @@ const Banner = () => {
                             <Image src="/assets/banner/check.svg" alt="check-image" width={20} height={20} />
                             <h3 className='text-kellygreen text-sm font-semibold text-center lg:text-start'>Soyez les premiers à nous suivre</h3>
                         </div>
-                        <h1 className='text-midnightblue text-4xl sm:text-5xl font-semibold text-center lg:text-start lh-120 pt-5 lg:pt-0'>Développez vos compétences,numérique avec nous.</h1>
+                        <h1 className='text-midnightblue text-4xl sm:text-5xl font-semibold text-center lg:text-start lh-120 pt-5 lg:pt-0'>Développez vos compétences.</h1>
                         <h3 className='text-charcoal text-lg font-normal text-center lg:text-start opacity-75 pt-5 lg:pt-0'>Notre réseaux de mentor est là pour vous assister.</h3>
 
                         <div className="relative text-white focus-within:text-white flex flex-row-reverse input-shadow rounded-full pt-5 lg:pt-0">
