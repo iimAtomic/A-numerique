@@ -1,19 +1,18 @@
-"use client"
-import Slider from "react-slick";
-import React, { Component } from "react";
+"use client";
+
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { StarIcon } from '@heroicons/react/24/solid';
 import Image from "next/image";
+import { Flex, Box } from "@chakra-ui/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
-// CAROUSEL DATA
 
-interface DataType {
-    profession: string;
-    comment: string;
-    imgSrc: string;
-    name: string;
-}
 
-const postData: DataType[] = [
+const postData= [
     {
         name: "Robert Fox",
         profession: 'CEO, Parkview Int.Ltd',
@@ -50,89 +49,75 @@ const postData: DataType[] = [
         comment: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
         imgSrc: '/assets/mentor/user3.png',
     },
-]
+];
 
-// CAROUSEL SETTINGS
-
-
-export default class MultipleItems extends Component {
-
-    render() {
-        const settings = {
-            dots: true,
-            dotsClass: "slick-dots",
-            infinite: true,
-            slidesToShow: 3,
-            // centerMode: true,
-            slidesToScroll: 2,
-            arrows: false,
-            autoplay: false,
-            speed: 500,
-            autoplaySpeed: 2000,
-            cssEase: "linear",
-            responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 800,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false
-                    }
-                }
-            ]
-        };
-
-        return (
-            <div className="pt-40 pb-10 sm:pb-32 lg:py-32" id="testimonial">
-                <div className='mx-auto max-w-7xl sm:py-4 lg:px-8'>
-                    <Slider {...settings}>
-                        {postData.map((items, i) => (
-                            <div key={i}>
-                                <div className={`bg-white m-4 p-5 my-20 relative ${i % 2 ? 'middleDiv' : 'testimonial-shadow'}`}>
-                                    <div className="absolute top-[-45px]">
-                                        <Image src={items.imgSrc} alt={items.imgSrc} width={100} height={100} className="inline-block" />
-                                    </div>
-                                    <h4 className='text-base font-normal text-darkgray my-4'>{items.comment}</h4>
-                                    <hr style={{ color: "#D7D5D5" }} />
-                                    <div className="flex justify-between">
-                                        <div>
-                                            <h3 className='text-lg font-medium text-darkbrown pt-4 pb-2'>{items.name}</h3>
-                                            <h3 className='text-sm font-normal text-lightgray pb-2'>{items.profession}</h3>
-                                        </div>
-                                        <div className="flex">
-                                            <StarIcon width={20} className="text-gold" />
-                                            <StarIcon width={20} className="text-gold" />
-                                            <StarIcon width={20} className="text-gold" />
-                                            <StarIcon width={20} className="text-gold" />
-                                            <StarIcon width={20} className="text-lightgray" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </Slider>
+const MultipleItems = () => {
+  return (
+    <div className="pt-40 pb-10 sm:pb-32 lg:py-32" id="testimonial">
+      <div className='mx-auto max-w-7xl sm:py-4 lg:px-8'>
+        <Swiper
+          spaceBetween={30}
+          slidesPerView={3}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          pagination={{ clickable: true }}
+          navigation={true}
+          breakpoints={{
+            1200: { slidesPerView: 3 },
+            800: { slidesPerView: 2 },
+            600: { slidesPerView: 1 },
+          }}
+        >
+          {postData.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className={`bg-white m-4 p-5 my-20 relative ${index % 2 ? 'middleDiv' : 'testimonial-shadow'}`}>
+                <div className="absolute top-[-45px]">
+                  <Image src={item.imgSrc} alt={item.name} width={100} height={100} className="inline-block" />
                 </div>
-            </div>
+                <h4 className='text-base font-normal text-darkgray my-4'>{item.comment}</h4>
+                <hr style={{ color: "#D7D5D5" }} />
+                <div className="flex justify-between">
+                  <div>
+                    <h3 className='text-lg font-medium text-darkbrown pt-4 pb-2'>{item.name}</h3>
+                    <h3 className='text-sm font-normal text-lightgray pb-2'>{item.profession}</h3>
+                  </div>
+                  <div className="flex">
+                    <StarIcon width={20} className="text-gold" />
+                    <StarIcon width={20} className="text-gold" />
+                    <StarIcon width={20} className="text-gold" />
+                    <StarIcon width={20} className="text-gold" />
+                    <StarIcon width={20} className="text-lightgray" />
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
 
-        );
-    }
-}
+      <Flex
+        flex={1}
+        justify={'center'}
+        align={'center'}
+        position={'relative'}
+        w={'full'}
+      >
+        <Box
+          position={'relative'}
+          marginTop={'50px'}
+          width={'600px'}
+          height={'300px'}
+          rounded={'2xl'}
+          boxShadow={'2xl'}
+          overflow={'hidden'}
+        >
+          <iframe width="660" height="315" src="https://youtu.be/WCdc6BHmRlM?si=Zjks6_m1edr4TCYF" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+        </Box>
+      </Flex>
+    </div>
+  );
+};
+
+export default MultipleItems;

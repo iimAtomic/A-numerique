@@ -1,19 +1,22 @@
 import Banner from './components/Banner/index';
-import Companies from './components/Companies/Companies';
-import Courses from './components/Courses/index';
 import Mentor from './components/Mentor/index';
-import Testimonials from './components/Testimonials/index';
 import Newsletter from './components/Newsletter/Newsletter';
+import CallToActionWithVideo from './components/Hero';
+import ProductSimple from './components/Testimonials/videoTest';
+import CallToActionWithIllustration from './components/Mentorat';
+import MultipleItems from './components/Testimonials';
 
 
 export default function Home() {
   return (
     <main>
       <Banner />
-      <Companies />
-      <Courses />
+      {/* <Companies /> */}
+       <CallToActionWithVideo /> 
       <Mentor />
-      <Testimonials />
+      <MultipleItems />
+      <CallToActionWithIllustration/>
+     {/* <ProductSimple />/*/}
       <Newsletter />
     </main>
   )

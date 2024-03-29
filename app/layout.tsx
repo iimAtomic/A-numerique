@@ -1,6 +1,8 @@
 import './globals.css';
 import Navbar from './components/Navbar/index';
 import Footer from './components/Footer/Footer';
+import { ChakraProvider } from '@chakra-ui/react'
+import { Providers } from './providers'
 
 
 export const metadata = {
@@ -22,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+      <Providers>
         <Navbar />
         {children}
         <Footer />
+        </Providers>
       </body>
     </html>
   )

@@ -1,3 +1,24 @@
+'use client'
+
+import {
+  Box,
+  Flex,
+  Avatar,
+  Text,
+  Button,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuDivider,
+  useDisclosure,
+  useColorModeValue,
+  Stack,
+  useColorMode,
+  Center,
+} from '@chakra-ui/react'
+import { MoonIcon, SunIcon } from '@chakra-ui/icons'
+
 import { Disclosure } from '@headlessui/react';
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -6,6 +27,8 @@ import Drawer from "./Drawer";
 import Drawerdata from "./Drawerdata";
 import Signdialog from "./Signdialog";
 import Registerdialog from "./Registerdialog";
+import Mentor_page from "../../mentor_page"
+
 
 interface NavigationItem {
     name: string;
@@ -15,9 +38,9 @@ interface NavigationItem {
 
 const navigation: NavigationItem[] = [
     { name: 'Acceuil', href: '#/', current: true },
-    { name: 'Cours', href: '#courses', current: false },
-    { name: 'Mentor', href: '#mentor', current: false },
-    { name: 'Equipe', href: '/', current: false },
+   /* { name: 'Cours', href: 'coursTab/', current: false },*/
+    { name: 'Mentor', href: '../../mentor_page', current: false },
+   /* { name: 'Equipe', href: '/', current: false },*/
     { name: 'Temoignage', href: '#testimonial', current: false },
 ];
 
@@ -47,6 +70,10 @@ const Navbar = () => {
     const handleLinkClick = (href: string) => {
         setCurrentLink(href);
     };
+
+    
+    const { colorMode, toggleColorMode } = useColorMode()
+   
 
     return (
         <Disclosure as="nav" className="navbar">
@@ -99,7 +126,9 @@ const Navbar = () => {
 
                         {/* SIGNIN DIALOG */}
 
-                        <Signdialog />
+                        {/* <Button onClick={toggleColorMode}>
+                            {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+                        </Button> */}
 
 
                         {/* REGISTER DIALOG */}
@@ -114,6 +143,8 @@ const Navbar = () => {
                         <div className='block lg:hidden'>
                             <Bars3Icon className="block h-6 w-6" aria-hidden="true" onClick={() => setIsOpen(true)} />
                         </div>
+
+                        
 
                         {/* DRAWER LINKS DATA */}
 

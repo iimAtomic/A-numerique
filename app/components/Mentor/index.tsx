@@ -2,6 +2,15 @@
 import Slider from "react-slick";
 import React, { Component } from "react";
 import Image from "next/image";
+import { FcNext } from "react-icons/fc";
+import { FcPrevious} from "react-icons/fc";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css'; // Styles de base
+import 'swiper/css/navigation'; // Styles pour la navigation
+import 'swiper/css/pagination'; // Styles pour la pagination
+// Importation des modules de fonctionnalités
+import { Navigation, Pagination } from 'swiper/modules';
+
 
 // CAROUSEL DATA
 
@@ -13,139 +22,71 @@ interface DataType {
 
 const postData: DataType[] = [
     {
-        profession: 'Senior UX Designer',
-        name: 'Shoo Thar Mien',
-        imgSrc: '/assets/mentor/user3.png',
+        profession: 'Président A-Numérique',
+        name: 'Jean-Noël ASSEMIEN',
+        imgSrc: '/assets/equipe/e2.jpeg',
     },
     {
-        profession: 'Senior UX Designer',
-        name: 'Shoo Thar Mien',
-        imgSrc: '/assets/mentor/user2.png',
+        profession: ' Vice-Présidente A-Numérique, Manager des Organisations|',
+        name: 'Raphaëlla SADIA',
+        imgSrc: '/assets/equipe/e5.jpeg',
     },
     {
-        profession: 'Senior UX Designer',
-        name: 'Shoo Thar Mien',
-        imgSrc: '/assets/mentor/user1.png',
+        profession: 'Employée de banque , Trésorière A-Numérique',
+        name: 'Christivi MUSAWO',
+        imgSrc: '/assets/equipe/e1.jpeg',
     },
     {
-        profession: 'Senior UX Designer',
-        name: 'Shoo Thar Mien',
-        imgSrc: '/assets/mentor/user3.png',
+        profession: 'Ingénieur Maintenance, Responsable des Relations Publiques à A-Numérique',
+        name: 'Dominique MOUNZIEGOU',
+        imgSrc: '/assets/equipe/e7.jpeg',
     },
     {
-        profession: 'Senior UX Designer',
-        name: 'Shoo Thar Mien',
-        imgSrc: '/assets/mentor/user2.png',
+        profession: ' Styliste Modéliste, membre Service Communication',
+        name: 'Gracia HOUENOU',
+        imgSrc: '/assets/equipe/e6.jpeg',
     },
     {
-        profession: 'Senior UX Designer',
-        name: 'Shoo Thar Mien',
-        imgSrc: '/assets/mentor/user1.png',
+        profession: ' Cheffe de projet éditorial web, Membre Service Communication',
+        name: 'Esther ASSEMIEN',
+        imgSrc: '/assets/equipe/e4.jpeg',
+    },
+    {
+        profession: ' Stagiaire à la délégation du Burkina Faso auprès de L-UNESCO, Membre Service Relations Publiques',
+        name: 'Ramatou COULIBALY',
+        imgSrc: '/assets/equipe/e3.jpeg',
     },
 ]
 
-// CAROUSEL SETTINGS
 
-function SampleNextArrow(props: { className: any; style: any; onClick: any; }) {
-    const { className, style, onClick } = props;
+export default function TeamCarousel() {
     return (
-        <div
-            className={className}
-            style={{ ...style, display: "flex", justifyContent: "center", position: 'absolute', alignItems: "center" , background: "#D5EFFA", padding: "28px", borderRadius: "30px", border: "1px solid #1A21BC" }}
-            onClick={onClick}
-        />
-    );
-}
-
-function SamplePrevArrow(props: { className: any; style: any; onClick: any; }) {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className}
-            style={{ ...style, display: "flex", justifyContent: "center", alignItems: "center" , background: "#D5EFFA", padding: "28px", borderRadius: "30px", border: "1px solid #1A21BC" }}
-            onClick={onClick}
-        />
-    );
-}
-
-
-
-export default class MultipleItems extends Component {
-
-    render() {
-        const settings = {
-            dots: false,
-            infinite: true,
-            slidesToShow: 3,
-            // centerMode: true,
-            slidesToScroll: 1,
-            arrows: false,
-            autoplay: false,
-            speed: 4000,
-            nextArrow: <SampleNextArrow className={undefined} style={undefined} onClick={undefined} />,
-            prevArrow: <SamplePrevArrow className={undefined} style={undefined} onClick={undefined} />,
-            autoplaySpeed: 4500,
-            cssEase: "linear",
-            responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 1000,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 530,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false
-                    }
-                }
-            ]
-        };
-
-
-        return (
-            <div className="py-10 sm:py-24 bg-paleblue" id="mentor">
-
-                <div className='mx-auto max-w-2xl lg:max-w-7xl sm:py-4 px-4 lg:px-8 relative'>
-                    <h2 className="lh-82 text-midnightblue text-4xl md:text-55xl text-center md:text-start font-semibold">Decouvrez nos <br /> mentors.</h2>
-
-                    <Slider {...settings}>
-                        {postData.map((items, i) => (
-                            <div key={i}>
-                                <div className='m-3 py-14 md:my-10 text-center'>
-                                    <div className="relative">
-                                        <Image src={items.imgSrc} alt="user-image" width={306} height={0} className="inline-block m-auto" />
-                                        <div className="absolute right-[84px] bottom-[102px] bg-white rounded-full p-4">
-                                            <Image src={'/assets/mentor/linkedin.svg'} alt="linkedin-image" width={25} height={24} />
-                                        </div>
-                                    </div>
-                                    <div className="-mt-10">
-                                        <h3 className='text-2xl font-semibold text-lightblack'>{items.name}</h3>
-                                        <h4 className='text-lg font-normal text-lightblack pt-2 opacity-50'>{items.profession}</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </Slider>
-
+      <div className="py-10 sm:py-24 bg-paleblue">
+        <div className='mx-auto max-w-2xl lg:max-w-7xl sm:px-4 lg:px-8'>
+          <h2 className="text-midnightblue text-4xl md:text-5xl text-center md:text-start font-semibold mb-8">Découvrez notre équipe.</h2>
+          <Swiper
+            modules={[Navigation, Pagination]} // Utilisez les modules ici
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation // active le module Navigation
+            pagination={{ clickable: true }} // active le module Pagination
+            breakpoints={{
+              640: { slidesPerView: 2, spaceBetween: 20 },
+              768: { slidesPerView: 3, spaceBetween: 30 },
+              1024: { slidesPerView: 4, spaceBetween: 40 },
+            }}
+          >
+            {postData.map((item, i) => (
+              <SwiperSlide key={i}>
+                <div className='text-center'>
+                  <Image src={item.imgSrc} alt="user-image" width={306} height={306} objectFit="cover" />
+                  <h3 className='text-2xl font-semibold text-lightblack mt-4'>{item.name}</h3>
+                  <h4 className='text-lg font-normal text-lightblack opacity-75 mt-2'>{item.profession}</h4>
                 </div>
-            </div>
-
-        );
-    }
-}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
+    );
+  }
