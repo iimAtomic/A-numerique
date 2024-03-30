@@ -1,23 +1,53 @@
-import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useState } from 'react'
-import { LockClosedIcon } from '@heroicons/react/20/solid'
-
-import React from 'react'
-import { Radio, RadioGroup, Stack } from '@chakra-ui/react'
-
+import React, { useState, FormEvent, Fragment } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
+import { LockClosedIcon } from '@heroicons/react/20/solid';
+import { Radio, RadioGroup, Stack } from '@chakra-ui/react';
 
 const Register = () => {
-    let [isOpen, setIsOpen] = useState(false)
+  // Déclare tes variables d'état une seule fois ici
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [value, setValue] = useState('1');
+  const [isOpen, setIsOpen] = useState(false);
 
-    const closeModal = () => {
-        setIsOpen(false)
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = {
+      email: email, // Supposons que tu aies déjà ces valeurs dans l'état de ton composant
+      subject: `Sujet sélectionné: ${value}`,
+      message: message,
+    };
+  
+    try {
+      const response = await fetch('/api/sendMails', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        console.log('Email envoyé avec succès!');
+        // Traite la réponse succès ici (par exemple, afficher un message de succès)
+      } else {
+        throw new Error('Une erreur est survenue lors de l\'envoi de l\'email');
+      }
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi de l\'email:', error);
+      // Traite les erreurs ici (par exemple, afficher un message d'erreur)
     }
+  };
 
-    const openModal = () => {
-        setIsOpen(true)
-    }
+  const closeModal = () => {
+    setIsOpen(false);
+  };
 
-    const [value, setValue] = React.useState('1')
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
 
     return (
         <>
@@ -83,6 +113,8 @@ const Register = () => {
                                                             required
                                                             className="relative block w-full appearance-none rounded-none rounded-t-md border border-grey500 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                                             placeholder="Entrez votre adresse Mail"
+                                                            value={email}
+                                                            onChange={(e) => setEmail(e.target.value)}
                                                         />
                                                     </div>
                                                     {/* <div>
@@ -122,6 +154,8 @@ const Register = () => {
                                                             required
                                                             className="relative block w-full appearance-none rounded-none rounded-t-md border border-grey500 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                                             placeholder="Entrez votre message "
+                                                            value={message}
+                                                            onChange={(e) => setMessage(e.target.value)}
                                                         />
                                                     </div>
 
@@ -178,5 +212,7 @@ const Register = () => {
         </>
     )
 }
+
+
 
 export default Register;

@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: "export",
+   
+    reactStrictMode: true,
+	env: {
+		EMAIL_USERNAME:"vegbahermerite2@gmail.com",
+        EMAIL_PASSWORD:"dpgihxqlaojbxsnc"
+	},
 }
 
 module.exports = nextConfig

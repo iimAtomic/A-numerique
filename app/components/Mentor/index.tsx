@@ -61,7 +61,7 @@ const postData: DataType[] = [
 
 export default function TeamCarousel() {
     return (
-      <div className="py-10 sm:py-24 bg-paleblue">
+      <div className="py-10 sm:py-24 bg-paleblue" id="équipe">
         <div className='mx-auto max-w-2xl lg:max-w-7xl sm:px-4 lg:px-8'>
           <h2 className="text-midnightblue text-4xl md:text-5xl text-center md:text-start font-semibold mb-8">Découvrez notre équipe.</h2>
           <Swiper
@@ -71,15 +71,22 @@ export default function TeamCarousel() {
             navigation // active le module Navigation
             pagination={{ clickable: true }} // active le module Pagination
             breakpoints={{
-              640: { slidesPerView: 2, spaceBetween: 20 },
-              768: { slidesPerView: 3, spaceBetween: 30 },
+              640: { slidesPerView: 1, spaceBetween: 20 },
+              768: { slidesPerView: 2, spaceBetween: 20 },
+              938: { slidesPerView: 3, spaceBetween: 20 },
               1024: { slidesPerView: 4, spaceBetween: 40 },
             }}
           >
             {postData.map((item, i) => (
               <SwiperSlide key={i}>
-                <div className='text-center'>
-                  <Image src={item.imgSrc} alt="user-image" width={306} height={306} objectFit="cover" />
+                <div className='text-center-mentor' >
+                  <Image 
+                    className="img-mentor"
+                    src={item.imgSrc}
+                    alt="user-image"
+                    width={200}
+                    height={200}
+                     />
                   <h3 className='text-2xl font-semibold text-lightblack mt-4'>{item.name}</h3>
                   <h4 className='text-lg font-normal text-lightblack opacity-75 mt-2'>{item.profession}</h4>
                 </div>

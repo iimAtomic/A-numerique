@@ -36,7 +36,7 @@ export default function CallToActionWithVideo() {
   const videoUrl = 'https://youtu.be/e6bEpjUR7Eg?si=06tQlJMTTUQhmroo';
 
   return (
-    <Container maxW={'7xl'}>
+    <Container maxW={'7xl'}  id="nous">
       <Stack
         align={'center'}
         spacing={{ base: 8, md: 10 }}
@@ -146,7 +146,7 @@ export default function CallToActionWithVideo() {
       
 
       
-      <VStack paddingTop="10px" marginBottom="20px" spacing="2" alignItems="flex-start">
+      <VStack paddingTop="10px" marginBottom="20px" spacing="2" alignItems="flex-start" id="mentor">
       <Heading
             lineHeight={1.1}
             fontWeight={600}
@@ -190,11 +190,12 @@ export default function CallToActionWithVideo() {
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-              commodo consequat.
-            </AccordionPanel>
+            <p>Pour tirer parti de notre programme de mentorat et faire un pas vers votre inclusion numérique, suivez ces étapes simples :</p>
+            <p>- Cliquez sur l&apos;un des boutons &quot;Rejoignez-nous&quot; disponibles sur la page.</p>
+            <p>- Sélectionnez l&apos;objet correspondant à votre demande et envoyez-nous un message.</p>
+            <p>Nous nous engageons à répondre dans un délai de moins de 24 heures. Nous vous attendons avec impatience !</p>
+          </AccordionPanel>
+
           </AccordionItem>
 
           <AccordionItem>
@@ -207,11 +208,12 @@ export default function CallToActionWithVideo() {
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-              commodo consequat.
-            </AccordionPanel>
+            <p>Si vous souhaitez devenir mentor et partager votre expertise :</p>
+            <p>- Accédez à notre page et cliquez sur l&apos;un des boutons &quot;Rejoignez-nous&quot;.</p>
+            <p>- Choisissez l&apos;objet qui correspond à votre intention de devenir mentor et envoyez un message, en précisant vos disponibilités pour un entretien.</p>
+            <p>- Un entretien sera programmé selon vos disponibilités, pouvant se dérouler en présentiel ou en ligne.</p>
+          </AccordionPanel>
+
           </AccordionItem>
         </Accordion>
 

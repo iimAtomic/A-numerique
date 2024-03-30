@@ -38,9 +38,9 @@ interface NavigationItem {
 
 const navigation: NavigationItem[] = [
     { name: 'Acceuil', href: '#/', current: true },
-   /* { name: 'Cours', href: 'coursTab/', current: false },*/
-    { name: 'Mentor', href: '../../mentor_page', current: false },
-   /* { name: 'Equipe', href: '/', current: false },*/
+    { name: 'Qui sommes nous ?', href: '#nous', current: false },
+    { name: 'Mentor', href: '#mentor', current: false },
+    { name: 'Notre equipe', href: '#équipe', current: false },
     { name: 'Temoignage', href: '#testimonial', current: false },
 ];
 

@@ -57,7 +57,7 @@ const MultipleItems = () => {
       <div className='mx-auto max-w-7xl sm:py-4 lg:px-8'>
         <Swiper
           spaceBetween={30}
-          slidesPerView={3}
+          slidesPerView={1}
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
@@ -68,6 +68,7 @@ const MultipleItems = () => {
             1200: { slidesPerView: 3 },
             800: { slidesPerView: 2 },
             600: { slidesPerView: 1 },
+           
           }}
         >
           {postData.map((item, index) => (
@@ -104,17 +105,15 @@ const MultipleItems = () => {
         position={'relative'}
         w={'full'}
       >
-        <Box
-          position={'relative'}
-          marginTop={'50px'}
-          width={'600px'}
-          height={'300px'}
-          rounded={'2xl'}
-          boxShadow={'2xl'}
-          overflow={'hidden'}
-        >
-          <iframe width="660" height="315" src="https://youtu.be/WCdc6BHmRlM?si=Zjks6_m1edr4TCYF" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-        </Box>
+       <Box
+            position={'relative'}
+            height={'300px'}
+            rounded={'2xl'}
+            boxShadow={'2xl'}
+            width={'500'}
+            overflow={'hidden'}>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/WCdc6BHmRlM?si=fOWdLRNIfPPo9th1" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>
+          </Box>
       </Flex>
     </div>
   );
