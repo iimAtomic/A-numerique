@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main>
       <Banner />
-       <CallToActionWithVideo /> 
+      <CallToActionWithVideo /> 
       <Mentor />
       <MultipleItems />
       <Newsletter />
