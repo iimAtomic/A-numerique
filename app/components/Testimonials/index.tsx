@@ -55,7 +55,8 @@ const MultipleItems = () => {
   return (
     <div className="pt-40 pb-10 sm:pb-32 lg:py-32" id="testimonial">
       <div className='mx-auto max-w-7xl sm:py-4 lg:px-8'>
-        <Swiper
+        <h2 className="text-midnightblue text-4xl md:text-5xl text-center md:text-center font-semibold mb-8">TEMOIGNAGES</h2>
+        {/* <Swiper
           spaceBetween={30}
           slidesPerView={1}
           autoplay={{
@@ -95,7 +96,7 @@ const MultipleItems = () => {
               </div>
             </SwiperSlide>
           ))}
-        </Swiper>
+        </Swiper> */}
       </div>
 
       <Flex

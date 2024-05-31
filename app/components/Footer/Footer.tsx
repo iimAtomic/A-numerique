@@ -16,38 +16,41 @@ interface socialLinks {
 const socialLinks: socialLinks[] = [
     {
         imgSrc: '/assets/footer/facebook.svg',
-        link: 'www.facebook.com',
+        link: 'https://www.facebook.com/anumeriquefrance',
         width: 10
     },
     {
         imgSrc: '/assets/footer/insta.svg',
-        link: 'www.instagram.com',
+        link: 'https://www.instagram.com/association.anumerique?igsh=MTFuNGR5d24zdng4ZQ==',
         width: 14
     },
     {
-        imgSrc: '/assets/footer/twitter.svg',
-        link: 'www.twitter.com',
+        imgSrc: '/assets/footer/tiktok.svg',
+        link: 'https://www.tiktok.com/@anumerique1?_t=8klMy168wPh&_r=1',
         width: 14
     },
-
+    {
+        imgSrc: '/assets/footer/linkedin.svg',
+        link: 'https://www.linkedin.com/company/a-numérique?trk=organization_guest_main-feed-card_feed-actor-name',
+        width: 14
+    },
+    {
+        imgSrc: '/assets/footer/youtube.svg',
+        link: 'https://youtube.com/@a-numerique?si=8bd0-ypf7MdySinv',
+        width: 14
+    },
 ]
 
 const products: ProductType[] = [
     {
         id: 1,
         section: "Company",
-        link: ['About', 'Careers', 'Mobile', 'Blog', 'How we work?'],
+        link: ['About', 'Careers'],
     },
     {
         id: 2,
         section: "Contact",
-        link: ['Help/FAQ', 'Press', 'Affiliates', 'Hotel owners', 'Partners']
-    }
-    ,
-    {
-        id: 3,
-        section: "More",
-        link: ['Airline fees', 'Airlines', 'Low fare tips', 'Badges &', 'Certificates']
+        link: ['Help/FAQ','Partners']
     }
 ]
 

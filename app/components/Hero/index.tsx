@@ -87,7 +87,7 @@ export default function CallToActionWithVideo() {
                   // paddingRight={2}
                   // marginRight={2}
                   leftIcon={<PlayIcon h={4} w={4} color={'gray.300'} />}>
-                  How It Works
+                  Comment ca marche ?
                 </Button>
                 
           </Stack>

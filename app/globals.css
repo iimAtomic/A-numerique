@@ -173,3 +173,20 @@ hr {
     background-size: cover;
     border-radius: 20px;
 }
+
+
+.img-mentor{
+    border-style: none;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+  }
+  
+  .text-center-mentor{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    align-items: center;
+  }
+  
