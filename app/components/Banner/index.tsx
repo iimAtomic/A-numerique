@@ -37,6 +37,7 @@ const Banner = () => {
                                 <Image src="/assets/banner/check-circle.svg" alt="check-image" width={30} height={30} className='smallImage'/>
                                 <p className='text-sm sm:text-lg font-normal text-black'>Flexibilité</p>
                             </div>
+
                             <div className='flex gap-2'>
                                 <Image src="/assets/banner/check-circle.svg" alt="check-image" width={30} height={30} className='smallImage'/>
                                 <p className='text-sm sm:text-lg font-normal text-black'>Apprentissage</p>

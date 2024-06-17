@@ -4,6 +4,7 @@ import Newsletter from './components/Newsletter/Newsletter';
 import CallToActionWithVideo from './components/Hero';
 import ProductSimple from './components/Testimonials/videoTest';
 import MultipleItems from './components/Testimonials';
+import MultiCours from './components/Courses';
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <Banner />
       <CallToActionWithVideo /> 
       <Mentor />
+      <MultiCours />
       <MultipleItems />
       <Newsletter />
     </main>

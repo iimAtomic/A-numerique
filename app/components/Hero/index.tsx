@@ -81,12 +81,14 @@ export default function CallToActionWithVideo() {
                   size={'lg'}
                   fontWeight={'normal'}
                   px={6}
+                  background={'#0D4CAC'}
+                  color={'#FFF'}
                   // paddingTop={1.25}
                   // paddingBottom={ 1.25}
                   // paddingLeft={2}
                   // paddingRight={2}
                   // marginRight={2}
-                  leftIcon={<PlayIcon h={4} w={4} color={'gray.300'} />}>
+                  leftIcon={<PlayIcon h={4} w={4} color={'#FFF'} />}>
                   Comment ca marche ?
                 </Button>
                 
@@ -153,6 +155,7 @@ export default function CallToActionWithVideo() {
             fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
             <Text
               as={'span'}
+              color={'#0D4CAC'}
               position={'relative'}
               _after={{
                 content: "''",
@@ -161,10 +164,10 @@ export default function CallToActionWithVideo() {
                 position: 'absolute',
                 bottom: 1,
                 left: 0,
-                bg: '#0D4CAC',
+                // bg: '#0D4CAC',
                 zIndex: -1,
               }}>
-             Notre programme de  mentorat
+             Notre programme de  Mentorat/Bénévolat
             </Text>
             <br />
             <Text as={'span'} color={'#418D3E'}>
@@ -173,9 +176,9 @@ export default function CallToActionWithVideo() {
           </Heading>
 
           <Text as="p" fontSize="lg">
-          Notre programme de mentorat à A&apos;numérique est conçu pour créer des liens enrichissants entre des mentors expérimentés et des adhérents désireux de progresser tant sur le plan personnel que professionnel. Nous sommes convaincus que le mentorat est un outil puissant, capable de catalyser le succès en offrant une voie privilégiée pour l&apos;acquisition de connaissances, l&apos;obtention de conseils pratiques et la réception d&apos;une guidance personnalisée.
+          Notre programme d'aide à A&apos;numérique est conçu pour créer des liens enrichissants entre desbénévoles desireux d'aider  , suivis par des  mentors expérimentés et des adhérents désireux de progresser tant sur le plan personnel que professionnel. Nous sommes convaincus que le mentorat est un outil puissant, capable de catalyser le succès en offrant une voie privilégiée pour l&apos;acquisition de connaissances, l&apos;obtention de conseils pratiques et la réception d&apos;une guidance personnalisée.
 
-          À travers ce programme, nous mettons à disposition des mentors chevronnés, qui sont des experts dans leurs domaines respectifs. Ils sont prêts à partager leur riche expérience et leur savoir-faire, dans le but d&apos;aider les adhérents à surmonter les défis spécifiques auxquels ils sont confrontés et à atteindre leurs objectifs. Le mentorat chez A&apos;numérique est donc une opportunité unique de bénéficier d&apos;un accompagnement sur mesure, qui facilite le partage d&apos;expériences et encourage la croissance personnelle et professionnelle..
+          À travers ce programme, nous mettons à votre disposition des bénévoles motivés pour vous suivre dans l'evolution de votre apprentissage. Ils sont prêts à partager leur riche expérience et leur savoir-faire, dans le but d&apos;aider les adhérents à surmonter les défis spécifiques auxquels ils sont confrontés et à atteindre leurs objectifs. L'aide proposé chez A&apos;numérique est donc une opportunité unique de bénéficier d&apos;un accompagnement sur mesure, qui facilite le partage d&apos;expériences et encourage la croissance personnelle et professionnelle..
         </Text>
       </VStack>
 
@@ -184,19 +187,40 @@ export default function CallToActionWithVideo() {
             <h2>
               <AccordionButton>
                 <Box as="span" flex='2' textAlign='left'>
-                <Heading as="h3">Comment Profiter du mentorat ?</Heading>
+                <Heading as="h3">Comment Profiter du Suivis et des Cours</Heading>
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-            <p>Pour tirer parti de notre programme de mentorat et faire un pas vers votre inclusion numérique, suivez ces étapes simples :</p>
+            <p>Pour tirer parti de notre programme  et faire un pas vers votre inclusion numérique, suivez ces étapes simples :</p>
             <p>- Cliquez sur l&apos;un des boutons &quot;Rejoignez-nous&quot; disponibles sur la page.</p>
             <p>- Sélectionnez l&apos;objet correspondant à votre demande et envoyez-nous un message.</p>
             <p>Nous nous engageons à répondre dans un délai de moins de 24 heures. Nous vous attendons avec impatience !</p>
           </AccordionPanel>
 
           </AccordionItem>
+
+          
+
+          <AccordionItem>
+            <h2>
+              <AccordionButton>
+                <Box as="span" flex='1' textAlign='left'>
+                <Heading as="h3">Comment Devenir un Bénévole ?</Heading>
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+            </h2>
+            <AccordionPanel pb={4}>
+            <p>Si vous souhaitez devenir Bénévole et aider des personnes  :</p>
+            <p>- Accédez à notre page et cliquez sur l&apos;un des boutons &quot;Rejoignez-nous&quot;.</p>
+            <p>- Choisissez l&apos;objet qui correspond à votre intention de devenir bénévole et envoyez un message, en précisant vos disponibilités pour un entretien.</p>
+            <p>- Un entretien sera programmé selon vos disponibilités, pouvant se dérouler en présentiel ou en ligne.</p>
+          </AccordionPanel>
+
+          </AccordionItem>
+          
 
           <AccordionItem>
             <h2>

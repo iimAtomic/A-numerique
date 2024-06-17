@@ -44,13 +44,13 @@ const socialLinks: socialLinks[] = [
 const products: ProductType[] = [
     {
         id: 1,
-        section: "Company",
-        link: ['About', 'Careers'],
+        section: "Notre ASSOS",
+        link: ['A propos', 'JOBS'],
     },
     {
         id: 2,
         section: "Contact",
-        link: ['Help/FAQ','Partners']
+        link: ['AIDE/FAQ','Partenaires']
     }
 ]
 

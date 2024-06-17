@@ -85,22 +85,26 @@ const Navbar = () => {
                             {/* LOGO */}
 
                             <div className="flex flex-shrink-0 items-center">
+                               
+                            <a href="https://anumerique.com/">
                                 <img
                                     className="block h-12 w-40 lg:hidden"
-                                    src={'/assets/logo/logoAnum2.png'}
+                                    src="/assets/logo/logoAnum2.png"
                                     alt="dsign-logo"
                                     style={{ width: '50px' }}
                                 />
+                            </a>
+                            <a href="https://anumerique.com/">
                                 <img
                                     className="hidden h-15 w-26 lg:block"
                                     src={'/assets/logo/logoAnum2.png'}
                                     alt="dsign-logo"
                                     style={{ width: '80px' }}
                                 />
+                            </a>
                             </div>
 
                             {/* LINKS */}
-
                             <div className="hidden lg:block m-auto">
                                 <div className="flex space-x-4">
                                     {navigation.map((item) => (
@@ -126,9 +130,9 @@ const Navbar = () => {
 
                         {/* SIGNIN DIALOG */}
 
-                        {/* <Button onClick={toggleColorMode}>
+                         {/* <Button onClick={toggleColorMode}>
                             {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-                        </Button> */}
+                        </Button>  */}
 
 
                         {/* REGISTER DIALOG */}
@@ -140,8 +144,8 @@ const Navbar = () => {
 
                         {/* DRAWER ICON */}
 
-                        <div className='block lg:hidden'>
-                            <Bars3Icon className="block h-6 w-6" aria-hidden="true" onClick={() => setIsOpen(true)} />
+                        <div className='block lg:hiden'>
+                            <Bars3Icon className="block h-7 w-7" aria-hidden="true" onClick={() => setIsOpen(true)} />
                         </div>
 
                         
