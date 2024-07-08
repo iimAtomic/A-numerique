@@ -176,9 +176,9 @@ export default function CallToActionWithVideo() {
           </Heading>
 
           <Text as="p" fontSize="lg">
-          Notre programme d'aide à A&apos;numérique est conçu pour créer des liens enrichissants entre desbénévoles desireux d'aider  , suivis par des  mentors expérimentés et des adhérents désireux de progresser tant sur le plan personnel que professionnel. Nous sommes convaincus que le mentorat est un outil puissant, capable de catalyser le succès en offrant une voie privilégiée pour l&apos;acquisition de connaissances, l&apos;obtention de conseils pratiques et la réception d&apos;une guidance personnalisée.
+          Notre programme d&apos;aide à A&apos;numérique est conçu pour créer des liens enrichissants entre desbénévoles desireux d&apos;aider  , suivis par des  mentors expérimentés et des adhérents désireux de progresser tant sur le plan personnel que professionnel. Nous sommes convaincus que le mentorat est un outil puissant, capable de catalyser le succès en offrant une voie privilégiée pour l&apos;acquisition de connaissances, l&apos;obtention de conseils pratiques et la réception d&apos;une guidance personnalisée.
 
-          À travers ce programme, nous mettons à votre disposition des bénévoles motivés pour vous suivre dans l&apos;evolution de votre apprentissage. Ils sont prêts à partager leur riche expérience et leur savoir-faire, dans le but d&apos;aider les adhérents à surmonter les défis spécifiques auxquels ils sont confrontés et à atteindre leurs objectifs. L'aide proposé chez A&apos;numérique est donc une opportunité unique de bénéficier d&apos;un accompagnement sur mesure, qui facilite le partage d&apos;expériences et encourage la croissance personnelle et professionnelle..
+          À travers ce programme, nous mettons à votre disposition des bénévoles motivés pour vous suivre dans l&apos;evolution de votre apprentissage. Ils sont prêts à partager leur riche expérience et leur savoir-faire, dans le but d&apos;aider les adhérents à surmonter les défis spécifiques auxquels ils sont confrontés et à atteindre leurs objectifs. L&apos;aide proposé chez A&apos;numérique est donc une opportunité unique de bénéficier d&apos;un accompagnement sur mesure, qui facilite le partage d&apos;expériences et encourage la croissance personnelle et professionnelle..
         </Text>
       </VStack>
 
