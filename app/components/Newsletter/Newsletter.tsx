@@ -13,7 +13,7 @@ const Newsletter = () => {
             <div className="mb-10 mt-24 lg:mx-64 lg:my-24">
               <h3 className="text-4xl md:text-55xl text-center font-semibold text-white mb-3">Newsletter.</h3>
               <h3 className="text-base font-normal opacity-75 text-white text-center mb-8">
-              Abonnez-vous à notre newsletter pour bénéficier de réductions,<br /> des promotions et bien d'autres encore.
+              Abonnez-vous à notre newsletter pour bénéficier de réductions,<br /> des promotions et bien d&apos;autres encore.
               </h3>
               <NewsletterForm />
             </div>
