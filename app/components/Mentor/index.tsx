@@ -27,32 +27,32 @@ const postData: DataType[] = [
         imgSrc: '/assets/equipe/e2.jpeg',
     },
     {
-        profession: ' Vice-Présidente A-Numérique, Manager des Organisations|',
+        profession: ' Vice-Présidente A-Numérique',
         name: 'Raphaëlla SADIA',
         imgSrc: '/assets/equipe/e5.jpeg',
     },
     {
-        profession: 'Employée de banque , Trésorière A-Numérique',
+        profession: 'Trésorière A-Numérique',
         name: 'Christivi MUSAWO',
         imgSrc: '/assets/equipe/e1.jpeg',
     },
     {
-        profession: 'Ingénieur Maintenance, Responsable des Relations Publiques à A-Numérique',
+        profession: 'Responsable des Relations Publiques à A-Numérique',
         name: 'Dominique MOUNZIEGOU',
         imgSrc: '/assets/equipe/e7.jpeg',
     },
     {
-        profession: ' Styliste Modéliste, membre Service Communication',
+        profession: 'Membre Service Communication A-Numérique',
         name: 'Gracia HOUENOU',
         imgSrc: '/assets/equipe/e6.jpeg',
     },
     {
-        profession: ' Cheffe de projet éditorial web, Membre Service Communication',
+        profession: 'Membre Service Communication A-Numérique',
         name: 'Esther ASSEMIEN',
         imgSrc: '/assets/equipe/e4.jpeg',
     },
     {
-        profession: ' Stagiaire à la délégation du Burkina Faso auprès de L-UNESCO, Membre Service Relations Publiques',
+        profession: 'Membre Service Relations Publiques A-Numérique',
         name: 'Ramatou COULIBALY',
         imgSrc: '/assets/equipe/e3.jpeg',
     },

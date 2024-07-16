@@ -68,12 +68,13 @@ export default function CallToActionWithVideo() {
             </Text>
           </Heading>
           <Text color={'gray.500'}>
-                    A&apos;Numerique est une association à but non lucratif qui accompagne individuellement, à domicile, les personnes confrontées à la fracture numérique. 
-          En tant qu&apos;association dédiée à l&apos;inclusion numérique et sociale, nous sommes également engagés dans la prévention et la lutte contre l&apos;analphabétisme et l&apos;illettrisme, deux problématiques majeures qui contribuent à l&apos;illectronisme et à l&apos;exclusion sociale.
-          Notre vision est de construire une société numériquement et socialement inclusive où règne la fraternité et la solidarité. 
-          Nous offrons grace à notre reseau de mentor,  des accompagnements à domicile à raison de 2h par semaine. 
-          Nous proposons aussi des formations collectives.
-          </Text>
+  A&apos;Numerique est une association à but non lucratif qui accompagne individuellement, à domicile, les personnes confrontées à la fracture numérique. 
+  En tant qu&apos;association dédiée à l&apos;inclusion numérique et sociale, nous sommes également engagés dans la prévention et la lutte contre l&apos;analphabétisme et l&apos;illettrisme, deux problématiques majeures qui contribuent à l&apos;illectronisme et à l&apos;exclusion sociale.
+  Notre vision est de construire une société numériquement et socialement inclusive où règnent la fraternité et la solidarité. 
+  Nous offrons grâce à notre réseau de mentors des accompagnements à domicile à raison de 2h par semaine. 
+  Nous proposons aussi des formations collectives.
+</Text>
+
           
           <Stack spacing={{ base: 6, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
                 <Button
@@ -176,10 +177,11 @@ export default function CallToActionWithVideo() {
           </Heading>
 
           <Text as="p" fontSize="lg">
-          Notre programme d&apos;aide à A&apos;numérique est conçu pour créer des liens enrichissants entre desbénévoles desireux d&apos;aider  , suivis par des  mentors expérimentés et des adhérents désireux de progresser tant sur le plan personnel que professionnel. Nous sommes convaincus que le mentorat est un outil puissant, capable de catalyser le succès en offrant une voie privilégiée pour l&apos;acquisition de connaissances, l&apos;obtention de conseils pratiques et la réception d&apos;une guidance personnalisée.
+  Notre programme d&apos;aide à A&apos;Numerique est conçu pour créer des liens enrichissants entre des bénévoles désireux d&apos;aider, suivis par des mentors expérimentés, et des adhérents désireux de progresser tant sur le plan personnel que professionnel. Nous sommes convaincus que le mentorat est un outil puissant, capable de catalyser le succès en offrant une voie privilégiée pour l&apos;acquisition de connaissances, l&apos;obtention de conseils pratiques et la réception d&apos;une guidance personnalisée.
 
-          À travers ce programme, nous mettons à votre disposition des bénévoles motivés pour vous suivre dans l&apos;evolution de votre apprentissage. Ils sont prêts à partager leur riche expérience et leur savoir-faire, dans le but d&apos;aider les adhérents à surmonter les défis spécifiques auxquels ils sont confrontés et à atteindre leurs objectifs. L&apos;aide proposé chez A&apos;numérique est donc une opportunité unique de bénéficier d&apos;un accompagnement sur mesure, qui facilite le partage d&apos;expériences et encourage la croissance personnelle et professionnelle..
-        </Text>
+  À travers ce programme, nous mettons à votre disposition des bénévoles motivés pour vous suivre dans l&apos;évolution de votre apprentissage. Ils sont prêts à partager leur riche expérience et leur savoir-faire, dans le but d&apos;aider les adhérents à surmonter les défis spécifiques auxquels ils sont confrontés et à atteindre leurs objectifs. L&apos;aide proposée chez A&apos;Numerique est donc une opportunité unique de bénéficier d&apos;un accompagnement sur mesure, qui facilite le partage d&apos;expériences et encourage la croissance personnelle et professionnelle.
+</Text>
+
       </VStack>
 
       <Accordion defaultIndex={[0]} allowMultiple  marginTop={10}  marginBottom={20}>
@@ -187,17 +189,18 @@ export default function CallToActionWithVideo() {
             <h2>
               <AccordionButton>
                 <Box as="span" flex='2' textAlign='left'>
-                <Heading as="h3">Comment Profiter du Suivis et des Cours</Heading>
+                <Heading as="h3">Comment Profiter du Suivis et des Cours ?</Heading>
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-            <p>Pour tirer parti de notre programme  et faire un pas vers votre inclusion numérique, suivez ces étapes simples :</p>
-            <p>- Cliquez sur l&apos;un des boutons &quot;Rejoignez-nous&quot; disponibles sur la page.</p>
-            <p>- Sélectionnez l&apos;objet correspondant à votre demande et envoyez-nous un message.</p>
-            <p>Nous nous engageons à répondre dans un délai de moins de 24 heures. Nous vous attendons avec impatience !</p>
-          </AccordionPanel>
+              <p>Pour tirer parti de notre programme et faire un pas vers votre inclusion numérique, suivez ces étapes simples :</p>
+              <p>- Cliquez sur l&apos;un des boutons &quot;Rejoignez-nous&quot; disponibles sur la page.</p>
+              <p>- Sélectionnez l&apos;objet correspondant à votre demande et envoyez-nous un message.</p>
+              <p>Nous nous engageons à répondre dans un délai de moins de 24 heures. Nous vous attendons avec impatience !</p>
+            </AccordionPanel>
+
 
           </AccordionItem>
 
@@ -213,11 +216,12 @@ export default function CallToActionWithVideo() {
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-            <p>Si vous souhaitez devenir Bénévole et aider des personnes  :</p>
-            <p>- Accédez à notre page et cliquez sur l&apos;un des boutons &quot;Rejoignez-nous&quot;.</p>
-            <p>- Choisissez l&apos;objet qui correspond à votre intention de devenir bénévole et envoyez un message, en précisant vos disponibilités pour un entretien.</p>
-            <p>- Un entretien sera programmé selon vos disponibilités, pouvant se dérouler en présentiel ou en ligne.</p>
-          </AccordionPanel>
+              <p>Si vous souhaitez devenir bénévole et aider des personnes :</p>
+              <p>- Accédez à notre page et cliquez sur l&apos;un des boutons &quot;Rejoignez-nous&quot;.</p>
+              <p>- Choisissez l&apos;objet qui correspond à votre intention de devenir bénévole et envoyez un message, en précisant vos disponibilités pour un entretien.</p>
+              <p>- Un entretien sera programmé selon vos disponibilités, pouvant se dérouler en présentiel ou en ligne.</p>
+            </AccordionPanel>
+
 
           </AccordionItem>
           
@@ -237,6 +241,7 @@ export default function CallToActionWithVideo() {
             <p>- Choisissez l&apos;objet qui correspond à votre intention de devenir mentor et envoyez un message, en précisant vos disponibilités pour un entretien.</p>
             <p>- Un entretien sera programmé selon vos disponibilités, pouvant se dérouler en présentiel ou en ligne.</p>
           </AccordionPanel>
+
 
           </AccordionItem>
         </Accordion>

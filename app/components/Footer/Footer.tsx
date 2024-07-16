@@ -66,7 +66,7 @@ const footer = () => {
                     <div className="flex flex-shrink-0 items-center border-right">
                         <Image src="/assets/logo/logoAnum2.png" alt="logo" width={184} height={56} />
                     </div>
-                    <h3 className='text-xs font-medium text-gunmetalgray lh-160 mt-5 mb-4 lg:mb-16'> Open an account in minutes, get full financial <br /> control for much longer.</h3>
+                    <h3 className='text-xs font-medium text-gunmetalgray lh-160 mt-5 mb-4 lg:mb-16'> L’éducation n’est pas un privilège.  <br />C’est un droit acquis à la naissance </h3>
                     <div className='flex gap-4'>
 
                         {socialLinks.map((items, i) => (

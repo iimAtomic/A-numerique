@@ -14,12 +14,20 @@ import Link from "next/link";
 import Image from "next/image";
 import { StarIcon } from "@heroicons/react/24/solid";
 
+const Home = () => {
+  const handleClick = () => {
+    window.location.href = 'https://www.example.com';
+  };}
+
 // CAROUSEL DATA
 interface DataType {
   heading: string;
   heading2: string;
   imgSrc: string;
   name: string;
+  content : string;
+  content2 : string;
+  content3 : string;
   students: number;
   classes: number;
   price: number;
@@ -28,9 +36,12 @@ interface DataType {
 
 const postData: DataType[] = [
   {
-    heading: "Full stack modern",
+    heading: "ALPHABÉTISATION",
     heading2: "javascript",
     name: "Colt Stelle",
+    content: " Cours de françaispour les analphabètes",
+    content2 :" Cours d'Anglais pour les analphabètes ",
+    content3 : "Cours de français, anglais et allemand pour les professionnels",
     imgSrc: "/assets/courses/courseone.png",
     students: 150,
     classes: 12,
@@ -38,50 +49,52 @@ const postData: DataType[] = [
     rating: 4.7,
   },
   {
-    heading: "Design system",
+    heading: "NUMÉRIQUE",
     heading2: "with React programme",
     name: "Colt Stelle",
-    imgSrc: "/assets/courses/coursetwo.png",
+    content:"Réseau et Systèmes",
+    content2 :"Data",
+    content3 : "Développement informatique",
+    imgSrc: "/assets/courses/coursethree.png",
     students: 130,
     classes: 12,
     price: 20,
     rating: 4.7,
   },
   {
-    heading: "Design banner",
+    heading: "Graphisme",
     heading2: "with Figma",
     name: "Colt Stelle",
-    imgSrc: "/assets/courses/coursethree.png",
+    content:"Montage vidéo",
+    content2 :"Montage photo",
+    content3 : "Creation artistique",
+    imgSrc: "/assets/courses/coursetwo.png",
     students: 120,
     classes: 12,
     price: 20,
     rating: 4.7,
   },
   {
-    heading: "We Launch Delia",
+    heading: "Entrepreneuriat",
     heading2: "Webflow this Week!",
     name: "Colt Stelle",
-    imgSrc: "/assets/courses/courseone.png",
+    content:"Prise de parole en public",
+    content2 :"Marketing et Vente",
+    content3 : "Leadership/Management",
+    imgSrc: "/assets/courses/Entreprenariat-regles-dor-pour-reussir.jpg",
     students: 150,
     classes: 12,
     price: 20,
     rating: 4.7,
   },
   {
-    heading: "We Launch Delia",
+    heading: "Soutien",
     heading2: "Webflow this Week!",
     name: "Colt Stelle",
+    content : "Soutien scolaire en  mathématiques",
+    content2 :"Soutien scolaire en physique-chimie",
+    content3 : "Écrire un livre/poème/slam",
     imgSrc: "/assets/courses/coursetwo.png",
-    students: 150,
-    classes: 12,
-    price: 20,
-    rating: 4.7,
-  },
-  {
-    heading: "We Launch Delia",
-    heading2: "Webflow this Week!",
-    name: "Colt Stelle",
-    imgSrc: "/assets/courses/coursethree.png",
     students: 150,
     classes: 12,
     price: 20,
@@ -90,14 +103,17 @@ const postData: DataType[] = [
 ];
 
 const MultiCours: React.FC = () => {
+    const handleClick = () => {
+      window.location.href = 'https://forms.gle/dUD42YSUrjZcjXV88'; 
+    }
   return (
     <div id="courses">
       <div className="mx-auto max-w-7xl sm:py-8 px-4 lg:px-8">
         <div className="sm:flex justify-between items-center">
           <h3 className="text-midnightblue text-4xl lg:text-55xl font-semibold mb-5 sm:mb-0">
-            Cours Populaires
+            Cours Populaires , cliquez pour y acceder
           </h3>
-          <Link href="/" className="text-Blueviolet text-lg font-medium space-links">
+          <Link href="/" className="text-Blueviolet text-lg font-medium space-links" onClick={handleClick}>
             Voir plus&nbsp;&gt;&nbsp;
           </Link>
         </div>
@@ -125,8 +141,8 @@ const MultiCours: React.FC = () => {
         >
           {postData.map((items, i) => (
             <SwiperSlide key={i}>
-              <div className="bg-white m-3 px-3 pt-3 pb-12 my-20 shadow-courses rounded-2xl">
-                <div className="relative rounded-3xl">
+              <div className="bg-white m-3 px-3 pt-3 pb-12 my-20 shadow-courses rounded-2xl" onClick={handleClick}>
+                <div className="relative rounded-3xl" onClick={handleClick}>
                   <Image
                     src={items.imgSrc}
                     alt="course image"
@@ -143,9 +159,11 @@ const MultiCours: React.FC = () => {
 
                 <div className="px-3">
                   <h4 className="text-2xl font-bold pt-6 text-black">{items.heading}</h4>
-                  <h4 className="text-2xl font-bold pt-1 text-black">{items.heading2}</h4>
+                  {/* <h4 className="text-2xl font-bold pt-1 text-black">{items.heading2}</h4> */}
                   <div>
-                    <h3 className="text-base font-normal pt-6 opacity-75">{items.name}</h3>
+                    <h3 className="text-base font-normal pt-6 opacity-75">1- {items.content}</h3>
+                    <h3 className="text-base font-normal pt-6 opacity-75">2- {items.content2}</h3>
+                    <h3 className="text-base font-normal pt-6 opacity-75">3- {items.content3}</h3>
                   </div>
 
                   <div className="flex justify-between items-center py-6">
@@ -158,7 +176,7 @@ const MultiCours: React.FC = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-3xl font-medium">${items.price}</h3>
+                      <h3 className="text-3xl font-medium">GRATUIT</h3>
                     </div>
                   </div>
 
