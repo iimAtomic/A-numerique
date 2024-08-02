@@ -16,12 +16,7 @@ import { StarIcon } from "@heroicons/react/24/solid";
 import { Button, Flex, useColorModeValue } from '@chakra-ui/react'
 import { useState } from 'react'
 
-const Home = () => {
-  const handleClick = () => {
-    window.location.href = 'https://www.example.com';
-  };}
-
-
+const Home = () => {}
   function randomColor() {
     return Math.floor(Math.random() * 5)
   }
@@ -230,7 +225,7 @@ const MultiCours: React.FC = () => {
                     <div className="flex gap-2">
                       <Button
                         px={8}
-                        bg={useColorModeValue('#0D4CAC', '#0D4CAC')}
+                        bg={'#0D4CAC'}
                         color={'white'}
                         rounded={'md'}
                         _hover={{
