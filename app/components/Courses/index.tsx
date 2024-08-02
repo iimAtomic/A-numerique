@@ -13,11 +13,23 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { StarIcon } from "@heroicons/react/24/solid";
+import { Button, Flex, useColorModeValue } from '@chakra-ui/react'
+import { useState } from 'react'
 
 const Home = () => {
   const handleClick = () => {
     window.location.href = 'https://www.example.com';
   };}
+
+
+  function randomColor() {
+    return Math.floor(Math.random() * 5)
+  }
+  
+  const colorList: string[] = ['#E53E3E', '#38A169', '#00B5D8', '#44337A', '#ED64A6']
+
+
+  
 
 // CAROUSEL DATA
 interface DataType {
@@ -106,16 +118,25 @@ const MultiCours: React.FC = () => {
     const handleClick = () => {
       window.location.href = 'https://forms.gle/dUD42YSUrjZcjXV88'; 
     }
+
+    const [colorCode, setColorCode] = useState(colorList[randomColor()])
+
+
+  const handleButtonClick = () => {
+    setColorCode(colorList[randomColor()]);
+    handleClick();
+  };
+
   return (
     <div id="courses">
       <div className="mx-auto max-w-7xl sm:py-8 px-4 lg:px-8">
         <div className="sm:flex justify-between items-center">
           <h3 className="text-midnightblue text-4xl lg:text-55xl font-semibold mb-5 sm:mb-0">
-            Cours Populaires , cliquez pour y acceder
+            Cours Populaires
           </h3>
-          <Link href="/" className="text-Blueviolet text-lg font-medium space-links" onClick={handleClick}>
+          {/* <Link href="/" className="text-Blueviolet text-lg font-medium space-links" onClick={handleClick}>
             Voir plus&nbsp;&gt;&nbsp;
-          </Link>
+          </Link> */}
         </div>
 
         <Swiper
@@ -134,6 +155,26 @@ const MultiCours: React.FC = () => {
               slidesPerGroup: 1,
             },
             600: {
+              slidesPerView: 1,
+              slidesPerGroup: 1,
+            },
+            500: {
+              slidesPerView: 1,
+              slidesPerGroup: 1,
+            },
+            400: {
+              slidesPerView: 1,
+              slidesPerGroup: 1,
+            },
+            300: {
+              slidesPerView: 1,
+              slidesPerGroup: 1,
+            },
+            200: {
+              slidesPerView: 1,
+              slidesPerGroup: 1,
+            },
+            100: {
               slidesPerView: 1,
               slidesPerGroup: 1,
             },
@@ -166,14 +207,17 @@ const MultiCours: React.FC = () => {
                     <h3 className="text-base font-normal pt-6 opacity-75">3- {items.content3}</h3>
                   </div>
 
-                  <div className="flex justify-between items-center py-6">
+                  <div className="flex justify-center items-center py-6">
                     <div className="flex gap-4">
-                      <h3 className="text-red text-22xl font-medium">{items.rating}</h3>
-                      <div className="flex">
+
+                      {/* <h3 className="text-red text-22xl font-medium">{items.rating}</h3> */}
+                      {/* <div className="flex">
                         {[...Array(5)].map((_, index) => (
                           <StarIcon key={index} className="h-5 w-5 text-gold" />
                         ))}
-                      </div>
+                        </div> */
+                      }
+
                     </div>
                     <div>
                       <h3 className="text-3xl font-medium">GRATUIT</h3>
@@ -182,30 +226,30 @@ const MultiCours: React.FC = () => {
 
                   <hr style={{ color: "#C4C4C4" }} />
 
-                  <div className="flex justify-between pt-6">
-                    <div className="flex gap-4">
-                      <Image
-                        src="/assets/courses/book-open.svg"
-                        alt="classes"
-                        width={24}
-                        height={24}
-                        className="inline-block m-auto"
-                      />
-                      <h3 className="text-base font-medium text-black opacity-75">
-                        {items.classes} classes
-                      </h3>
-                    </div>
-                    <div className="flex gap-4">
-                      <Image
+                  <div className="flex justify-center pt-6">
+                    <div className="flex gap-2">
+                      <Button
+                        px={8}
+                        bg={useColorModeValue('#0D4CAC', '#0D4CAC')}
+                        color={'white'}
+                        rounded={'md'}
+                        _hover={{
+                          boxShadow: 'lg',
+                        }}
+                        onClick={handleButtonClick}
+                        >
+                         <Image
                         src="/assets/courses/users.svg"
                         alt="students"
                         width={24}
                         height={24}
                         className="inline-block m-auto"
-                      />
-                      <h3 className="text-base font-medium text-black opacity-75">
-                        {items.students} students
-                      </h3>
+                        />
+                        Participer
+                      </Button>
+                      {/* <button className="text-base font-medium text-black opacity-75 " onClick={handleClick}>
+                        Participer
+                      </button> */}
                     </div>
                   </div>
                 </div>
