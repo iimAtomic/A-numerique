@@ -8,7 +8,7 @@ const NewsletterForm = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const res = await fetch('/api/sendGrid', {
+    const res = await fetch('/api/sendMail', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

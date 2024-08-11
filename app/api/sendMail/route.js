@@ -1,20 +1,20 @@
-// app/api/sendGrid/route.js
+// app/api/sendMail/route.js
 import nodemailer from 'nodemailer';
 
 export async function POST(req) {
   try {
     const { email, subject, message } = await req.json();
 
-    // Configurez le transporteur avec vos informations SMTP
+    // Configuration du transporteur avec nos informations SMTP
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.GMAIL_USER, // Votre adresse Gmail
-        pass: process.env.GMAIL_PASS, // Votre mot de passe ou App Password
+        user: process.env.GMAIL_USER, //adresse Gmail
+        pass: process.env.GMAIL_PASS, // mot de passe 
       },
     });
 
-    // Définissez les options de l'e-mail
+    // Définition des options de l'e-mail
     const mailOptions = {
       from: process.env.GMAIL_USER,
       to: email,
@@ -23,7 +23,7 @@ export async function POST(req) {
       html: `<strong>Destinataire : ${email} <br> Sujet choisis : <br/>Message : ${message}</strong>`,
     };
 
-    // Envoyez l'e-mail
+    // Envoie de l'e-mail
     await transporter.sendMail(mailOptions);
 
     console.log('Email envoyé:', mailOptions); // Log du message envoyé

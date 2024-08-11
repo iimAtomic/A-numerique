@@ -20,7 +20,7 @@ const Register = () => {
     };
 
     try {
-      const response = await fetch('/api/sendGrid', {
+      const response = await fetch('/api/sendMail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
