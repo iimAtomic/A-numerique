@@ -100,7 +100,7 @@ git checkout <nom-de-la-branche>
 ## Branches du Projet
 
 - **train** : C'est la branche de développement sur laquelle vous travaillez activement.
-- **master** : C'est la branche principale, représentant la version stable du projet.
+- **main** : C'est la branche principale, représentant la version stable du projet.
 
 ## Bibliothèque UI
 
