@@ -1,259 +1,154 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import 'swiper/css'; // Styles de base
-import 'swiper/css/navigation'; // Styles pour la navigation
-import 'swiper/css/pagination'; // Styles pour la pagination
-// Importation des modules de fonctionnalités
-import { Navigation, Pagination } from 'swiper/modules';
-import React from "react";
-import Link from "next/link";
+import { Button } from "@chakra-ui/react";
 import Image from "next/image";
-import { StarIcon } from "@heroicons/react/24/solid";
-import { Button, Flex, useColorModeValue } from '@chakra-ui/react'
-import { useState } from 'react'
+import React, { useState } from "react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-const Home = () => {}
-  function randomColor() {
-    return Math.floor(Math.random() * 5)
-  }
-  
-  const colorList: string[] = ['#E53E3E', '#38A169', '#00B5D8', '#44337A', '#ED64A6']
-
-
-  
-
-// CAROUSEL DATA
-interface DataType {
+// Types
+interface CourseData {
   heading: string;
-  heading2: string;
   imgSrc: string;
-  name: string;
-  content : string;
-  content2 : string;
-  content3 : string;
-  students: number;
-  classes: number;
-  price: number;
-  rating: number;
+  content: string[];
 }
 
-const postData: DataType[] = [
+const courseData: CourseData[] = [
   {
     heading: "ALPHABÉTISATION",
-    heading2: "javascript",
-    name: "Colt Stelle",
-    content: " Cours de français pour analphabètes",
-    content2 :" Cours d'Anglais pour analphabètes ",
-    content3 : "Cours de français, anglais et allemand pour les professionnels",
-    imgSrc: "/assets/courses/courseone.png",
-    students: 150,
-    classes: 12,
-    price: 20,
-    rating: 4.7,
+    imgSrc: "/assets/courses/alphabetisation.jpg",
+    content: [
+      "Cours de français pour analphabètes",
+      "Cours d'Anglais pour analphabètes",
+      "Cours de français, anglais et allemand pour les professionnels",
+    ],
   },
   {
     heading: "NUMÉRIQUE",
-    heading2: "with React programme",
-    name: "Colt Stelle",
-    content:"Réseau et Systèmes",
-    content2 :"Data",
-    content3 : "Développement informatique",
-    imgSrc: "/assets/courses/coursethree.png",
-    students: 130,
-    classes: 12,
-    price: 20,
-    rating: 4.7,
+    imgSrc: "/assets/courses/numerique.jpg",
+    content: ["Réseaux et Systèmes", "Data", "Développement informatique"],
   },
   {
-    heading: "Graphisme",
-    heading2: "with Figma",
-    name: "Colt Stelle",
-    content:"Montage vidéo",
-    content2 :"Montage photo",
-    content3 : "Creation artistique",
-    imgSrc: "/assets/courses/coursetwo.png",
-    students: 120,
-    classes: 12,
-    price: 20,
-    rating: 4.7,
+    heading: "BUREAUTIQUE",
+    imgSrc: "/assets/courses/bureautique.jpg",
+    content: [
+      "Microsoft Office (Word, Excel, PowerPoint)",
+      "Google Workspace (Docs, Sheets, Slides)",
+      "Gestion de projet et collaboration en ligne",
+    ],
   },
   {
-    heading: "Entrepreneuriat",
-    heading2: "Webflow this Week!",
-    name: "Colt Stelle",
-    content:"Prise de parole en public",
-    content2 :"Marketing et Vente",
-    content3 : "Leadership/Management",
-    imgSrc: "/assets/courses/Entreprenariat-regles-dor-pour-reussir.jpg",
-    students: 150,
-    classes: 12,
-    price: 20,
-    rating: 4.7,
+    heading: "ENTREPRENEURIAT",
+    imgSrc: "/assets/courses/entrepreunariat.jpg",
+    content: [
+      "Création et gestion d'entreprise",
+      "Marketing digital",
+      "Comptabilité et finance pour entrepreneurs",
+    ],
   },
   {
-    heading: "Soutien",
-    heading2: "Webflow this Week!",
-    name: "Colt Stelle",
-    content : "Soutien scolaire en  mathématiques",
-    content2 :"Soutien scolaire en physique-chimie",
-    content3 : "Écrire un livre/poème/slam",
-    imgSrc: "/assets/courses/coursetwo.png",
-    students: 150,
-    classes: 12,
-    price: 20,
-    rating: 4.7,
+    heading: "DÉVELOPPEMENT PERSONNEL",
+    imgSrc: "/assets/courses/dev-personnel.jpg",
+    content: [
+      "Gestion du temps et productivité",
+      "Communication efficace",
+      "Leadership et management",
+    ],
+  },
+  {
+    heading: "SOUTIENS SCOLAIRES",
+    imgSrc: "/assets/courses/soutien-scolaire.jpg",
+    content: [
+      "Soutien scolaire en  mathématiques",
+      "Soutien scolaire en physique",
+      "Soutien scolaire en chimie",
+    ],
+  },
+  {
+    heading: "POESIES ET ECRITURES",
+    imgSrc: "/assets/courses/poesie-ecriture.jpg",
+    content: ["Écrire un livre", "Écrire des slams", "Écrire un poème"],
   },
 ];
 
 const MultiCours: React.FC = () => {
-    const handleClick = () => {
-      window.location.href = 'https://forms.gle/dUD42YSUrjZcjXV88'; 
-    }
+  const [colorCode] = useState("#0D4CAC");
 
-    const [colorCode, setColorCode] = useState(colorList[randomColor()])
-
-
-  const handleButtonClick = () => {
-    setColorCode(colorList[randomColor()]);
-    handleClick();
+  const handleClick = () => {
+    window.open("https://forms.gle/dUD42YSUrjZcjXV88", "_blank");
   };
 
   return (
-    <div id="courses">
-      <div className="mx-auto max-w-7xl sm:py-8 px-4 lg:px-8">
-        <div className="sm:flex justify-between items-center">
-          <h3 className="text-midnightblue text-4xl lg:text-55xl font-semibold mb-5 sm:mb-0">
-            Cours Populaires
-          </h3>
-          {/* <Link href="/" className="text-Blueviolet text-lg font-medium space-links" onClick={handleClick}>
-            Voir plus&nbsp;&gt;&nbsp;
-          </Link> */}
-        </div>
+    <section id="courses" className="py-12 bg-gray-50">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <h2 className="mb-8 text-3xl font-semibold text-center text-midnightblue sm:text-4xl lg:text-5xl">
+          Cours Populaires
+        </h2>
 
         <Swiper
-          slidesPerView={3}
-          spaceBetween={30}
-          slidesPerGroup={2}
-          loop={true}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
+          slidesPerView={1}
+          spaceBetween={20}
+          pagination={{ clickable: true }}
+          navigation
           modules={[Pagination, Navigation]}
           breakpoints={{
-            1200: {
-              slidesPerView: 3,
-              slidesPerGroup: 1,
-            },
-            600: {
-              slidesPerView: 1,
-              slidesPerGroup: 1,
-            },
-            500: {
-              slidesPerView: 1,
-              slidesPerGroup: 1,
-            },
-            400: {
-              slidesPerView: 1,
-              slidesPerGroup: 1,
-            },
-            300: {
-              slidesPerView: 1,
-              slidesPerGroup: 1,
-            },
-            200: {
-              slidesPerView: 1,
-              slidesPerGroup: 1,
-            },
-            100: {
-              slidesPerView: 1,
-              slidesPerGroup: 1,
-            },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
           }}
+          className="pb-12"
         >
-          {postData.map((items, i) => (
-            <SwiperSlide key={i}>
-              <div className="bg-white m-3 px-3 pt-3 pb-12 my-20 shadow-courses rounded-2xl" onClick={handleClick}>
-                <div className="relative rounded-3xl" onClick={handleClick}>
+          {courseData.map((course, index) => (
+            <SwiperSlide key={index}>
+              <div className="h-full p-6 transition-transform duration-300 bg-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1">
+                <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg">
                   <Image
-                    src={items.imgSrc}
-                    alt="course image"
-                    width={389}
-                    height={262}
-                    className="m-auto clipPath"
+                    src={course.imgSrc}
+                    alt={`Image du cours ${course.heading}`}
+                    fill
+                    sizes="100%"
+                    style={{ objectFit: "cover" }}
                   />
-                  <div className="absolute right-5 -bottom-2 bg-ultramarine rounded-full p-6">
-                    <h3 className="text-white uppercase text-center text-sm font-medium">
-                      best <br /> seller
-                    </h3>
+                  <div className="absolute px-2 py-1 text-xs font-bold text-white rounded-full top-2 right-2 bg-ultramarine">
+                    POPULAIRE
                   </div>
                 </div>
 
-                <div className="px-3">
-                  <h4 className="text-2xl font-bold pt-6 text-black">{items.heading}</h4>
-                  {/* <h4 className="text-2xl font-bold pt-1 text-black">{items.heading2}</h4> */}
-                  <div>
-                    <h3 className="text-base font-normal pt-6 opacity-75">1- {items.content}</h3>
-                    <h3 className="text-base font-normal pt-6 opacity-75">2- {items.content2}</h3>
-                    <h3 className="text-base font-normal pt-6 opacity-75">3- {items.content3}</h3>
-                  </div>
+                <h3 className="mb-4 text-xl font-bold text-gray-800">
+                  {course.heading}
+                </h3>
+                <ul className="mb-6 space-y-2">
+                  {course.content.map((item, i) => (
+                    <li key={i} className="flex items-start">
+                      <span className="mr-2 text-green-500">•</span>
+                      <span className="text-sm text-gray-600">{item}</span>
+                    </li>
+                  ))}
+                </ul>
 
-                  <div className="flex justify-center items-center py-6">
-                    <div className="flex gap-4">
-
-                      {/* <h3 className="text-red text-22xl font-medium">{items.rating}</h3> */}
-                      {/* <div className="flex">
-                        {[...Array(5)].map((_, index) => (
-                          <StarIcon key={index} className="h-5 w-5 text-gold" />
-                        ))}
-                        </div> */
-                      }
-
-                    </div>
-                    <div>
-                      <h3 className="text-3xl font-medium">GRATUIT</h3>
-                    </div>
-                  </div>
-
-                  <hr style={{ color: "#C4C4C4" }} />
-
-                  <div className="flex justify-center pt-6">
-                    <div className="flex gap-2">
-                      <Button
-                        px={8}
-                        bg={'#0D4CAC'}
-                        color={'white'}
-                        rounded={'md'}
-                        _hover={{
-                          boxShadow: 'lg',
-                        }}
-                        onClick={handleButtonClick}
-                        >
-                         <Image
-                        src="/assets/courses/users.svg"
-                        alt="students"
-                        width={24}
-                        height={24}
-                        className="inline-block m-auto"
-                        />
-                        Participer
-                      </Button>
-                      {/* <button className="text-base font-medium text-black opacity-75 " onClick={handleClick}>
-                        Participer
-                      </button> */}
-                    </div>
-                  </div>
+                <div className="mt-auto">
+                  <p className="mb-4 text-2xl font-bold text-center text-green-600">
+                    GRATUIT
+                  </p>
+                  <Button
+                    width="full"
+                    bg="#0D4CAC"
+                    color="white"
+                    _hover={{ bg: "#418D3E" }}
+                    _active={{ bg: "#418D3E" }}
+                    onClick={handleClick}
+                  >
+                    Participer
+                  </Button>
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-    </div>
+    </section>
   );
 };
 

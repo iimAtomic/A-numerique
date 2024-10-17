@@ -1,10 +1,9 @@
 import Banner from './components/Banner/index';
+import MultiCours from './components/Courses';
+import CallToActionWithVideo from './components/Hero';
 import Mentor from './components/Mentor/index';
 import Newsletter from './components/Newsletter/Newsletter';
-import CallToActionWithVideo from './components/Hero';
-import ProductSimple from './components/Testimonials/videoTest';
-import MultipleItems from './components/Testimonials';
-import MultiCours from './components/Courses';
+import Testimonials from './components/Testimonials';
 
 
 export default function Home() {
@@ -14,7 +13,7 @@ export default function Home() {
       <CallToActionWithVideo /> 
       <Mentor />
       <MultiCours />
-      <MultipleItems />
+      <Testimonials />
       <Newsletter />
     </main>
   )
