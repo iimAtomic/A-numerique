@@ -1,15 +1,21 @@
 "use client";
-import React, { useState, FormEvent, Fragment } from 'react';
-import { Dialog, Transition } from '@headlessui/react';
-import { LockClosedIcon } from '@heroicons/react/20/solid';
-import { Radio, RadioGroup, Stack } from '@chakra-ui/react';
+import {
+  Button,
+  Radio,
+  RadioGroup,
+  Stack,
+  useDisclosure,
+} from "@chakra-ui/react";
+import { Dialog, Transition } from "@headlessui/react";
+import { LockClosedIcon } from "@heroicons/react/20/solid";
+import React, { FormEvent, Fragment, useState } from "react";
 
-const Register = () => {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [value, setValue] = useState('1');
-  const [isOpen, setIsOpen] = useState(false);
-  const [status, setStatus] = useState('');
+const Registerdialog: React.FC = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [value, setValue] = useState("1");
+  const [status, setStatus] = useState("");
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -20,51 +26,45 @@ const Register = () => {
     };
 
     try {
-      const response = await fetch('/api/sendMail', {
-        method: 'POST',
+      const response = await fetch("/api/sendMail", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        setStatus('Email envoyé avec succès!');
-        setEmail('');
-        setMessage('');
-        setValue('1');
+        setStatus("Email envoyé avec succès!");
+        setEmail("");
+        setMessage("");
+        setValue("1");
       } else {
-        throw new Error('Une erreur est survenue lors de l\'envoi de l\'email');
+        throw new Error("Une erreur est survenue lors de l'envoi de l'email");
       }
     } catch (error) {
       if (error instanceof Error) {
         setStatus(`Erreur : ${error.message}`);
       } else {
-        setStatus('Une erreur inconnue est survenue');
+        setStatus("Une erreur inconnue est survenue");
       }
     }
   };
 
-  const closeModal = () => {
-    setIsOpen(false);
-  };
-
-  const openModal = () => {
-    setIsOpen(true);
-  };
-
   return (
     <>
-      <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0">
-        <div className='lg:block'>
-          <button className="text-Blueviolet text-lg font-medium ml-3 py-2 px-6 transition duration-150 ease-in-out rounded-full bg-semiblueviolet hover:text-white hover:bg-Blueviolet" style={{margin:30}} onClick={openModal}>
-            Rejoignez Nous!
-          </button>
-        </div>
-      </div>
+      <Button
+        onClick={onOpen}
+        bg="#0D4CAC" // Couleur bleue du site
+        color="white"
+        _hover={{ bg: "#418D3E" }} // Couleur au survol (vert du site)
+        _active={{ bg: "#418D3E" }} // Couleur au clic (même que le survol)
+      >
+        Rejoignez-nous
+      </Button>
 
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Dialog as="div" className="relative z-50" onClose={onClose}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -78,7 +78,7 @@ const Register = () => {
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <div className="flex items-center justify-center min-h-full p-4 text-center">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -88,21 +88,25 @@ const Register = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+                <Dialog.Panel className="w-full max-w-md p-6 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                  <div className="flex flex-col items-center justify-center min-h-full px-4 py-8 sm:px-6 lg:px-8">
                     <div className="w-full max-w-md space-y-8">
                       <div>
                         <img
-                          className="mx-auto h-12 w-auto"
+                          className="w-auto h-12 mx-auto"
                           src="/assets/logo/logoAnum2.png"
                           alt="Your Company"
                         />
-                        <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+                        <h2 className="mt-6 text-3xl font-bold tracking-tight text-center text-gray-900">
                           Rejoignez Nous!
                         </h2>
                       </div>
                       <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-                        <input type="hidden" name="remember" defaultValue="true" />
+                        <input
+                          type="hidden"
+                          name="remember"
+                          defaultValue="true"
+                        />
                         <div className="-space-y-px rounded-md shadow-sm">
                           <div>
                             <label htmlFor="email-address" className="sr-only">
@@ -114,23 +118,25 @@ const Register = () => {
                               type="email"
                               autoComplete="email"
                               required
-                              className="relative block w-full appearance-none rounded-none rounded-t-md border border-grey500 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                              className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border rounded-none appearance-none rounded-t-md border-grey500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                               placeholder="Entrez votre adresse email"
                               value={email}
                               onChange={(e) => setEmail(e.target.value)}
                             />
                           </div>
-                          <div style={{ marginTop: 15 }}>
+                          <div className="mt-4">
                             <RadioGroup onChange={setValue} value={value}>
-                              <Stack direction='row'>
-                                <Radio value='1'>Devenir Mentor</Radio>
-                                <Radio value='2'>Devenir Bénévole</Radio>
-                                <Radio value='3'>Bénéficier de notre aide</Radio>
-                                <Radio value='4'>Autres</Radio>
+                              <Stack direction="column">
+                                <Radio value="1">Devenir Mentor</Radio>
+                                <Radio value="2">Devenir Bénévole</Radio>
+                                <Radio value="3">
+                                  Bénéficier de notre aide
+                                </Radio>
+                                <Radio value="4">Autres</Radio>
                               </Stack>
                             </RadioGroup>
                           </div>
-                          <div style={{ marginTop: 15 }}>
+                          <div className="mt-4">
                             <label htmlFor="message" className="sr-only">
                               Message
                             </label>
@@ -138,9 +144,8 @@ const Register = () => {
                               rows={4}
                               id="message"
                               name="message"
-                              autoComplete=""
                               required
-                              className="relative block w-full appearance-none rounded-none rounded-t-md border border-grey500 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                              className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border rounded-md border-grey500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                               placeholder="Entrez votre message"
                               value={message}
                               onChange={(e) => setMessage(e.target.value)}
@@ -150,25 +155,32 @@ const Register = () => {
                         <div>
                           <button
                             type="submit"
-                            className="group relative flex w-full justify-center rounded-md border border-transparent bg-Blueviolet py-2 px-4 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                            className="relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md group bg-Blueviolet focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                           >
                             <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                              <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
+                              <LockClosedIcon
+                                className="w-5 h-5 text-indigo-500 group-hover:text-indigo-400"
+                                aria-hidden="true"
+                              />
                             </span>
                             Envoyer
                           </button>
                         </div>
                       </form>
-                      {status && <p className="text-center text-red-500">{status}</p>}
+                      {status && (
+                        <p className="mt-2 text-sm text-center text-red-500">
+                          {status}
+                        </p>
+                      )}
                     </div>
                   </div>
-                  <div className="mt-4 flex justify-end">
+                  <div className="flex justify-end mt-4">
                     <button
                       type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent px-4 py-2 text-sm font-medium text-blue-900"
-                      onClick={closeModal}
+                      className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      onClick={onClose}
                     >
-                      Merci!
+                      Fermer
                     </button>
                   </div>
                 </Dialog.Panel>
@@ -181,4 +193,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Registerdialog;

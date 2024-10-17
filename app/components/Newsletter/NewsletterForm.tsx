@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 const NewsletterForm = () => {
   const [email, setEmail] = useState('');
@@ -27,19 +28,22 @@ const NewsletterForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="relative text-white focus-within:text-white flex flex-row-reverse rounded-full pt-5 lg:pt-0">
+      <div className="relative flex flex-row-reverse pt-5 text-white rounded-full focus-within:text-white lg:pt-0">
         <input 
           type="email" 
           value={email} 
           onChange={(e) => setEmail(e.target.value)} 
-          className="py-6 lg:py-8 text-sm md:text-lg w-full mx-3 text-black rounded-full pl-8 focus:outline-none focus:text-black" 
+          className="w-full py-6 pl-8 mx-3 text-sm text-black rounded-full lg:py-8 md:text-lg focus:outline-none focus:text-black" 
           placeholder="Entrez votre adresse email" 
           autoComplete="off" 
           required 
         />
-        <div className="absolute inset-y-0 right-0 flex items-center pr-6 pt-5 lg:pt-0">
-          <button type="submit" className="p-3 lg:p-5 focus:outline-none focus:shadow-outline bg-ultramarine hover:bg-midnightblue duration-150 ease-in-out rounded-full">
-            <img src={'/assets/newsletter/send.svg'} alt="send-icon" width={30} height={30} />
+        <div className="absolute inset-y-0 right-0 flex items-center pt-5 pr-6 lg:pt-0">
+          <button
+            type="submit"
+            className="p-3 duration-300 ease-in-out rounded-full lg:p-5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ultramarine bg-ultramarine hover:bg-[#418D3E] transition"
+          >
+            <Image src="/assets/newsletter/send.svg" alt="send-icon" width={30} height={30} />
           </button>
         </div>
       </div>

@@ -1,26 +1,41 @@
 // Newsletter.tsx
-import React from 'react';
-import Image from 'next/image';
-import NewsletterForm from './NewsletterForm';
+import Link from "next/link";
+import React from "react";
+import NewsletterForm from "./NewsletterForm";
 
-const Newsletter = () => {
+const Newsletter: React.FC = () => {
   return (
-    <>
-      {/* <div className="mx-auto max-w-2xl md:max-w-7xl sm:rounded-3xl testimonialbg"> */}
-      <div className="mx-auto max-w-2xl md:max-w-7xl sm:rounded-3xl">
-        <div className="grid grid-cols-1 gap-y-10 gap-x-6 md:grid-cols-12 xl:gap-x-8">
-          <div className="col-span-12 bg-imagee">
-            <div className="mb-10 mt-24 lg:mx-64 lg:my-24">
-              <h3 className="text-4xl md:text-55xl text-center font-semibold text-white mb-3">Newsletter.</h3>
-              <h3 className="text-base font-normal opacity-75 text-white text-center mb-8">
-              Abonnez-vous à notre newsletter pour bénéficier de réductions,<br /> des promotions et bien d&apos;autres encore.
-              </h3>
-              <NewsletterForm />
-            </div>
-          </div>
+    <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-imagee rounded-t-3xl">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl">
+            Newsletter
+          </h2>
+          <p className="mt-4 text-sm text-white/80 sm:text-base md:text-lg">
+            Abonnez-vous à notre newsletter pour bénéficier de réductions, des
+            promotions et bien d&apos;autres encore.
+          </p>
+        </div>
+
+        <div className="max-w-md mx-auto mt-6 sm:mt-8 md:mt-10 lg:mt-12">
+          <NewsletterForm />
+        </div>
+
+        <div className="mt-6 text-center sm:mt-8">
+          <p className="text-xs text-white/60 sm:text-sm">
+            En vous inscrivant, vous acceptez nos{" "}
+            <Link href="/terms-of-use" className="underline hover:text-white">
+              conditions d&apos;utilisation
+            </Link>{" "}
+            et notre{" "}
+            <Link href="/privacy-policy" className="underline hover:text-white">
+              politique de confidentialité
+            </Link>
+            .
+          </p>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
